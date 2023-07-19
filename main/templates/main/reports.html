@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %} 
+
+{% block title %} 
+Reports
+{% endblock %} 
+
+{% block content %} 
+    <div>
+        <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th>Bike ID</th>
+                <th>Bike Name</th>
+                <th>Type</th>
+                <th>Weight</th>
+                <th>Material</th>
+                <th>Condition</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for bike in bikes_ %}
+              <tr>
+                <td>{{ bike.bike_id }}</td>
+                <td>{{ bike.name }}</td>
+                <td>{{ bike.bike_type }}</td>
+                <td>{{ bike.weight }}</td>
+                <td>{{ bike.material }}</td>
+                <td>{{ bike.condition }}</td>
+                <td>
+                    <a href="/reports/{{ bike.bike_id }}">Update</a>
+                    <a href="/delete/{{ bike.bike_id }}">Delete</a>  
+                </td>
+              </tr>
+            {% endfor %}  
+            </tbody>
+          </table>
+    </div>
+{% endblock %}

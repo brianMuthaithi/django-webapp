@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %} 
+Branch
+{% endblock %} 
+
+{% block content %} 
+    <div>
+        <form action="{% url 'branch' %}" method="post" class="form-group">
+            <h3>Add a new branch</h3>
+            {% csrf_token %} 
+            {{ form.as_p }}
+            <button value="save" name="save" type="save" class="btn btn-block btn-primary">Add Branch</button>
+        </form>
+    </div>
+{% endblock %} 

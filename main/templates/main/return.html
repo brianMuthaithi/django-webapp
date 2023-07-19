@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %} 
+
+{% block title %} 
+Return
+{% endblock %}
+
+{% block content %} 
+    <form action="{% url 'return' %}" methd="post" class="form-group">
+        <h3>Receive bike</h3>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary btn-block" value="submit" type="submit">Save</button>
+    </form>
+{% endblock %}

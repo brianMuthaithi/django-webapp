@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %} 
+Bike
+{% endblock %} 
+
+{% block content %} 
+    <div>
+        <form action="{% url 'bike' %}" method="post" class="form-group">
+            <h3>Register a new bike</h3>
+            {% csrf_token %} 
+            {{ form.as_p }}
+            <button value="save" name="save" type="save" class="btn btn-block btn-primary">Save</button>
+        </form>
+    </div>
+{% endblock %} 

@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %} 
+
+{% block title %}
+Home 
+{% endblock %} 
+
+{% block content %} 
+    <form action="{% url 'home' %}" method="post" class="form-group">
+        <h3>Register a new customer</h3>
+        {% csrf_token %} 
+        {{ form.as_p }}        
+        <button class="btn btn-primary btn-block" name="submit" type="submit">Save</button>
+    </form>
+{% endblock %}
